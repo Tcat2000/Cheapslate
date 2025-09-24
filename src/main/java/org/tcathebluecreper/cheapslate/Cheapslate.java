@@ -25,10 +25,10 @@ public class Cheapslate {
 
     @SubscribeEvent
     public void changeBreakSpeed(PlayerEvent.BreakSpeed event) {
-        if(event.getState().getTags().anyMatch(tag -> tag.location().equals(ResourceLocation.parse("cheapslate:fast_blocks")))) {
+        if(event.getState().getTags().anyMatch(tag -> tag.location().equals(ResourceLocation.tryParse("cheapslate:fast_blocks")))) {
             ItemStack tool = event.getEntity().getMainHandItem();
             if(
-                    tool.getTags().anyMatch(tag -> tag.location().equals(ResourceLocation.parse("cheapslate:fast_pickaxes"))) &&
+                    tool.getTags().anyMatch(tag -> tag.location().equals(ResourceLocation.tryParse("cheapslate:fast_pickaxes"))) &&
                     tool.getAllEnchantments().getOrDefault(Enchantments.BLOCK_EFFICIENCY,0) >= Config.efficiencyLevel &&
                         (event.getEntity().hasEffect(MobEffects.DIG_SPEED) &&
                         event.getEntity().getEffect(MobEffects.DIG_SPEED).getAmplifier() >= Config.hasteLevel) || Config.hasteLevel == -1
