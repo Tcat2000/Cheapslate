@@ -2,6 +2,7 @@ modLoader = "javafml"
 loaderVersion = "${loader_version_range}"
 license = "${mod_license}"
 issueTrackerURL="https://github.com/Tcat2000/Cheapslate/issues"
+
 [[mods]]
 modId = "${mod_id}"
 version = "${mod_version}"
@@ -10,9 +11,9 @@ authors = "${mod_authors}"
 description = '''${mod_description}'''
 
 [[dependencies."${mod_id}"]]
-modId = "forge"
+modId = "neoforge"
 mandatory = true
-versionRange = "${forge_version_range}"
+versionRange = "[${neo_version},)"
 ordering = "NONE"
 side = "BOTH"
 
